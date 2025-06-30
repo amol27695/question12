@@ -3,7 +3,7 @@
   hosts: localhost
   become: true
   vars_files:
-    - user_list
+    - user_list.yml
   tasks:
     - name: creating complex users
       user:
