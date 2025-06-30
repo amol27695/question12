@@ -1,0 +1,18 @@
+---
+- name: Playbook using dynamic inventory
+  hosts: web
+  become: true
+  vars: 
+    content: "This is the content of the file"
+    file: "example.txt"
+    directory: "/tmp/example_dir"
+  tasks:
+    - name: Enssuring the file is present
+      file: 
+        path: "{{ directory }}"
+        state: directory
+        mode: '755'
+    - name: copy the content
+      copy:
+        content: "{{ content }}"
+        dest: "{{ directory }}/{{ file }}"
