@@ -1,6 +1,6 @@
 ---
 - name: Playbook using dynamic inventory
-  hosts: web
+  hosts: serverb
   become: true
   vars: 
     content: "This is the content of the file"
