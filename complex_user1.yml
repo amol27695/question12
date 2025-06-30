@@ -1,0 +1,16 @@
+---
+- name: Adding the complex users
+  hosts: localhost
+  become: true
+  vars_files:
+    - user_list
+  tasks:
+    - name: creating complex users
+      user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid }}"
+        comment: "{{ item.first | capitalize }} {{ item.second | capitalize }} {{ item.last | capitalize }}"
+        password: "{{ password | password_hash('sha56') }}"
+      loop: "{{ users }}"
+      vars:
+        password: "{{ lookup('ansible.builtin.password', './password-{{item.name}}', length=6 ) }}"
