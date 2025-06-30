@@ -13,7 +13,7 @@ def generate_inventory():
             "hostvars": {
                 "serverb.lab.example.com": {
                     "ansible_host": "serverb.lab.example.com",
-                    "ansible_user": "root"
+                    "ansible_user": "root",
          }
      }
   }
@@ -21,4 +21,4 @@ def generate_inventory():
     return inventory
 
 if__name__ == "__main__":
-    print(json.dumps(generate_inventory(), indent=))
+   print(json.dumps(generate_inventory(), indent=2))
