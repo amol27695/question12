@@ -1,0 +1,9 @@
+---
+- name: copy the content using dynamic inventory
+  hosts: web
+  become: true
+  tasks:
+    - name: copy the content
+      copy:
+        content: "Sun sets down in east"
+        dest: /etc/dynin
