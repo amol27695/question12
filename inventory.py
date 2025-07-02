@@ -9,14 +9,14 @@ def generate_inventory():
                 "serverb.lab.example.com"
             ]
     },
-        "_meta": {
-            "hostvars": {
-                "serverb.lab.example.com": {
-                    "ansible_host": "serverb.lab.example.com",
-                    "ansible_user": "root",
-         }
-     }
-  }
+    "_meta": {
+        "hostvars": {
+            "serverb.lab.example.com": {
+                "ansible_host": "serverb.lab.example.com",
+                "ansible_user": "root",
+              }
+       }
+    }
 }
     return inventory
 
